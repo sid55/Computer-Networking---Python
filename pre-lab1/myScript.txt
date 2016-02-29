@@ -1,0 +1,16 @@
+#!/bin/bash
+# My first script
+
+for file in *;
+        do
+                     counter=0
+                     while read line
+                        do
+                         IsEvenNo=$( expr $counter % 2)
+                         if [ $IsEvenNo -ne 0 ]
+                         then
+                         echo $file":" $line
+                         fi
+                         ((  counter++ ))
+                                done < $file
+done
