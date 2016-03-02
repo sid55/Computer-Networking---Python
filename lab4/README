@@ -1,0 +1,24 @@
+Name: Sidharth Gilela
+ID#: 1428033
+Email: sgilela@ucsc.edu
+
+Description:
+In this program, we had to implement a firewall that basically does not allow
+packets with no port numbers be sent to their destination hosts. In order
+to implement this, I first had to logically understand what to change and the 
+process the packet undergoes when sent from one host to another. Thus, here is
+the process. The first packet is sent from the host to the switch and the
+switch sends that packet to the controller. The controller then analyzes
+that packet and depending on whether or not there is a port number, it will
+either set the action in of_flow_mod to either send the next upcoming packets 
+to the destination host from the switch without consulting the controller or notsend it. Of_flow_mod is part of the switch is what the switch first consults 
+before talking to the controller. This Of_flow_mod has timeouts that basically
+allow all packets with that same infomation that traveled to the controller
+be allowed to be sent to the destination host directly from the switch. Using
+this logic I realized that whenever a packet is handled inside the controller,
+the firewall method needs to be called and inside that method, I could
+implement this of_flow_mod logic. Inside this method I would either accept
+or drop packets depending on the information they contain as I have explained
+above. This is my thought process and the description of this program. The 
+pox controller acts as a firewall analyzing whether or not certain packets can
+be sent to the destination host.
