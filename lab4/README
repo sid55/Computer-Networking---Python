@@ -3,7 +3,7 @@ ID#: 1428033
 Email: sgilela@ucsc.edu
 
 Description:
-In this program, we had to implement a firewall that basically does not allow
+In this program, I had to implement a firewall that basically does not allow
 packets with no port numbers be sent to their destination hosts. In order
 to implement this, I first had to logically understand what to change and the 
 process the packet undergoes when sent from one host to another. Thus, here is
