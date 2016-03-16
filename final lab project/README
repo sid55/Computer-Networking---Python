@@ -1,0 +1,25 @@
+README File
+Name: Sidharth Gilela
+ID #: 1428033
+Email: sgilela@ucsc.edu
+
+Description of what I did and the task at hand:
+In this program I had to basically allow the switches to have their hosts 
+talk to eachother based on their IP addresses. Hosts of the same subnet should
+be able to send packets to one another and hosts of each switch should be able
+to communicate with eachother. I implemented this by adding several if 
+statements to a certain section of the code. In each of the switches, I first
+checked if the src_ip in the Network is True and the dst_ip in the Network are
+true, then return true. If this statement comes out to be true, then it is
+basically checking if the both hosts that want to communicate on different 
+switches are part of the same subnet. After this if statement, I then had to
+implement code to check of hosts within the same switch are able to 
+communicate with eachother or not. I did this by manually checking the src_ip
+and dst_ip of all the possibilities of this. If the src_ip was equal to some
+ip number and the dst_ip was equal to another number, then the code would return
+True. I made all these changes in the section of the code that says "FIX ME".
+
+How to run this program:
+Open up two XTERMS on Mininet and then in one terminal type in "~/pox/pox.py misc.router". In the other terminal type in "sudo python final_topo.py". Then type in pingall and see the movement of packets from one host to another.
+
+
